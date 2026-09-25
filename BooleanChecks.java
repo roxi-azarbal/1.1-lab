@@ -1,0 +1,55 @@
+public class BooleanChecks {
+
+    // Returns false only when p is true and q is false.
+    // to-do: implement implies
+    public boolean implies(boolean p, boolean q) {
+        return !p || q;
+    }
+
+    // Returns true when exactly one of the two values is true.
+    // to-do: implement exactlyOne
+    public boolean exactlyOne(boolean p, boolean q) {
+        return (p || q) && !(p && q);
+    }
+
+    // Returns true when two or three of the values are true.
+    // to-do: implement atLeastTwo
+    public boolean atLeastTwo(boolean a, boolean b, boolean c) {
+        return (a && b) || (a && c) || (b && c);
+    }
+
+    // Returns true for a leap year in the Gregorian calendar.
+    // to-do: implement isLeapYear
+    public boolean isLeapYear(int year) {
+        // A year is a leap year when it divides evenly by 4, except that a year
+        // dividing evenly by 100 is not a leap year unless it also divides evenly by
+        // 400. So 2024 is a leap year, 2023 is not, 1900 is not, and 2000 is.
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+    // Returns true when value is below low or above high. Both endpoints count as
+    // inside.
+    // to-do: implement outsideRange
+    public boolean outsideRange(int value, int low, int high) {
+        return value < low || value > high;
+    }
+
+    // Returns true when d divides n evenly. A divisor of 0 divides nothing.
+    // to-do: implement divides
+    public boolean divides(int d, int n) {
+        return d != 0 && n % d == 0;
+    }
+
+    // Returns true when total / count is at least target. A count of 0 has no
+    // average.
+    // to-do: implement averageAtLeast
+    public boolean averageAtLeast(int total, int count, int target) {
+        return count != 0 && total / count >= target;
+    }
+
+    // Returns true when word begins with prefix.
+    // to-do: implement hasPrefix
+    public boolean hasPrefix(String word, String prefix) {
+        return prefix.length() <= word.length() && word.substring(0, prefix.length()).equals(prefix);
+    }
+}

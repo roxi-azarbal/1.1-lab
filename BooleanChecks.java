@@ -2,20 +2,20 @@ public class BooleanChecks {
 
     // Returns false only when p is true and q is false.
     // to-do: implement implies
-    public boolean implies(boolean p, boolean q) {
-        return !p || q;
+    public boolean isPromiseKept(boolean isRaining, boolean isCanceled) {
+        return !isRaining || isCanceled;
     }
 
     // Returns true when exactly one of the two values is true.
     // to-do: implement exactlyOne
-    public boolean exactlyOne(boolean p, boolean q) {
-        return (p || q) && !(p && q);
+    public boolean hasOneSide(boolean hasFries, boolean hasSalad) {
+        return (hasFries || hasSalad) && !(hasFries && hasSalad);
     }
 
     // Returns true when two or three of the values are true.
     // to-do: implement atLeastTwo
-    public boolean atLeastTwo(boolean a, boolean b, boolean c) {
-        return (a && b) || (a && c) || (b && c);
+    public boolean isApproved(boolean firstVote, boolean secondVote, boolean thirdVote) {
+        return (firstVote && secondVote) || (firstVote && thirdVote) || (secondVote && thirdVote);
     }
 
     // Returns true for a leap year in the Gregorian calendar.
@@ -50,6 +50,7 @@ public class BooleanChecks {
     // Returns true when word begins with prefix.
     // to-do: implement hasPrefix
     public boolean hasPrefix(String word, String prefix) {
-        return prefix.length() <= word.length() && word.substring(0, prefix.length()).equals(prefix);
+        return prefix.length() <= word.length()
+                && word.substring(0, prefix.length()).equals(prefix);
     }
 }
